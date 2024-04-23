@@ -1,6 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeader from '@/components/TheHeader.vue'
+</script>
 
 <template>
-  <div>App vue</div>
+  <the-header />
   <RouterView />
 </template>

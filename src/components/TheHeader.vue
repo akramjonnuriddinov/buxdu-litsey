@@ -1,0 +1,157 @@
+<script setup lang="ts">
+import TheLogo from '@/components/TheLogo.vue'
+import { ref } from 'vue'
+
+const links = [
+  {
+    name: 'Bosh sahifa',
+    path: '/',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Yangiliklar',
+    path: 'news',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Yoshlar ittifoqi',
+    path: 'youth-union',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Tuzilma',
+    path: 'structure',
+    inner: [
+      {
+        path: 'open-data',
+        name: 'Ochiq ma`lumotlar'
+      }
+    ]
+  },
+  {
+    name: 'Litsey haqida',
+    path: 'about',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Bizning faxrimiz',
+    path: 'teachers',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Bog`lanish',
+    path: 'contact',
+    inner: [
+      {
+        path: '',
+        name: ''
+      }
+    ]
+  },
+  {
+    name: 'Rahbariyat',
+    path: 'management',
+    inner: [
+      {
+        path: 'inner-management',
+        name: 'Ichki rahbariyat'
+      }
+    ]
+  }
+]
+
+const isShow = ref(false)
+
+const toggle = () => {
+  isShow.value = !isShow.value
+}
+</script>
+
+<template>
+  <div class="bg-blue-500 w-full h-2 max-[1024px]:hidden1"></div>
+  <header class="py-5 relative">
+    <div class="container w-full mx-auto px-5">
+      <div class="min-[1024px]:flex min-[1024px]:justify-between min-[1024px]:items-center">
+        <div class="flex justify-between items-center">
+          <button @click="toggle" class="flex flex-col min-[1024px]:hidden">
+            <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>
+            <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>
+            <span class="h-[1px] w-7 block bg-[#212529]"></span>
+          </button>
+          <the-logo class="min-[1024px]:mr-5" />
+          <div></div>
+        </div>
+        <nav
+          @click="toggle"
+          :class="{ 'opacity-0': !isShow, 'opacity-100': isShow }"
+          class="bg-[#00000080] transition-all duration-200 w-full fixed left-0 top-0 h-full min-[1024px]:opacity-100 min-[1024px]:bg-white min-[1024px]:relative"
+        >
+          <div
+            :class="{ '-translate-x-full': !isShow, 'translate-x-0': isShow }"
+            @click.stop
+            class="bg-white w-[80%] min-h-screen h-[1200px] transition-all duration-300 min-[1024px]:min-h-0 min-[1024px]:translate-x-0 min-[1024px]:h-auto min-[1024px]:w-full"
+          >
+            <div class="flex border-b p-4 items-center justify-end min-[1024px]:hidden">
+              <button class="w-5" @click="toggle">
+                <img src="@/assets/images/close.svg" alt="" />
+              </button>
+            </div>
+            <ul class="flex flex-col w-full min-[1024px]:justify-end min-[1024px]:flex-row">
+              <li
+                v-for="link in links"
+                :key="link.path"
+                class="border-b px-4 min-[1024px]:border-none"
+              >
+                <div class="flex justify-between">
+                  <router-link
+                    :to="link.path"
+                    class="py-4 font-medium whitespace-nowrap min-[1024px]:mr-2"
+                    >{{ link.name }}</router-link
+                  >
+                  <button
+                    v-if="link.inner[0].name.length"
+                    class="w-[20%] border-l min-[1024px]:border-none"
+                  >
+                    <img src="@/assets/images/down.svg" alt="" />
+                  </button>
+                </div>
+                <ul class="hidden">
+                  <li v-for="innerLink in link.inner" :key="innerLink.path">
+                    <router-link :to="innerLink.path">{{ innerLink.name }}</router-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+</template>
+
+<style scoped></style>
