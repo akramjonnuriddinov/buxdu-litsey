@@ -84,7 +84,7 @@ onMounted(async () => {
                 </div>
                 <div class="flex items-center">
                   <img class="mr-2" src="@/assets/images/user.svg" alt="" />
-                  <span>Admin</span>
+                  <span>{{ news.author }}</span>
                 </div>
               </div>
             </div>
