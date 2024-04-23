@@ -5,6 +5,7 @@ import { formatTime } from '@/composables/formatTime'
 import BaseButton from '@/components/BaseButton.vue'
 import AppLoader from '@/components/AppLoader.vue'
 import LoaderWrapper from '@/components/LoaderWrapper.vue'
+import { idText } from 'typescript'
 
 const allNews = ref()
 const isLoading = ref(true)
@@ -15,6 +16,11 @@ onMounted(async () => {
   allNews.value = data.data.data.body
   isLoading.value = false
   console.log(data.data.data.body)
+  setTimeout(() => {
+    if (isLoading.value) {
+      isLoading.value = false
+    }
+  }, 5000)
 })
 </script>
 
