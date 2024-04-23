@@ -3,17 +3,25 @@ import { onMounted, ref } from 'vue'
 import { getNews } from '@/api/news'
 import { formatTime } from '@/composables/formatTime'
 import BaseButton from '@/components/BaseButton.vue'
+import AppLoader from '@/components/AppLoader.vue'
+import LoaderWrapper from '@/components/LoaderWrapper.vue'
 
 const allNews = ref()
+const isLoading = ref(true)
 
 onMounted(async () => {
+  isLoading.value = true
   const data = await getNews('news')
   allNews.value = data.data.data.body
+  isLoading.value = false
   console.log(data.data.data.body)
 })
 </script>
 
 <template>
+  <loader-wrapper v-if="isLoading">
+    <app-loader />
+  </loader-wrapper>
   <section class="bg-[#f7f7f7] py-[100px]">
     <div class="container mx-auto px-5">
       <h2 class="mb-6 text-center text-[40px] leading-[40px] font-semibold">Yangiliklar</h2>
