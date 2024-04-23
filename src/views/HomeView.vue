@@ -1,3 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHero from '@/components/AppHero.vue'
+</script>
 
-<template>Home views</template>
+<template>
+  <app-hero />
+</template>
