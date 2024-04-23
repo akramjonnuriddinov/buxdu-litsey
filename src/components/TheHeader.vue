@@ -96,46 +96,46 @@ const toggle = () => {
   <div class="bg-blue-500 w-full h-2 max-[1024px]:hidden1"></div>
   <header class="py-5 relative">
     <div class="container w-full mx-auto px-5">
-      <div class="min-[1024px]:flex min-[1024px]:justify-between min-[1024px]:items-center">
+      <div class="min-[1280px]:flex min-[1280px]:justify-between min-[1280px]:items-center">
         <div class="flex justify-between items-center">
-          <button @click="toggle" class="flex flex-col min-[1024px]:hidden">
+          <button @click="toggle" class="flex flex-col min-[1280px]:hidden">
             <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>
             <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>
             <span class="h-[1px] w-7 block bg-[#212529]"></span>
           </button>
-          <the-logo class="min-[1024px]:mr-5" />
+          <the-logo class="min-[1280px]:mr-5" />
           <div></div>
         </div>
         <nav
           @click="toggle"
           :class="{ 'opacity-0': !isShow, 'opacity-100': isShow }"
-          class="bg-[#00000080] transition-all duration-200 w-full fixed left-0 top-0 h-full min-[1024px]:opacity-100 min-[1024px]:bg-white min-[1024px]:relative"
+          class="bg-[#00000080] transition-all duration-200 w-full fixed left-0 top-0 h-full min-[1280px]:opacity-100 min-[1280px]:bg-white min-[1280px]:relative"
         >
           <div
             :class="{ '-translate-x-full': !isShow, 'translate-x-0': isShow }"
             @click.stop
-            class="bg-white w-[80%] min-h-screen h-[1200px] transition-all duration-300 min-[1024px]:min-h-0 min-[1024px]:translate-x-0 min-[1024px]:h-auto min-[1024px]:w-full"
+            class="bg-white w-[80%] min-h-screen h-[1200px] transition-all duration-300 min-[1280px]:min-h-0 min-[1280px]:translate-x-0 min-[1280px]:h-auto min-[1280px]:w-full"
           >
-            <div class="flex border-b p-4 items-center justify-end min-[1024px]:hidden">
+            <div class="flex border-b p-4 items-center justify-end min-[1280px]:hidden">
               <button class="w-5" @click="toggle">
                 <img src="@/assets/images/close.svg" alt="" />
               </button>
             </div>
-            <ul class="flex flex-col w-full min-[1024px]:justify-end min-[1024px]:flex-row">
+            <ul class="flex flex-col w-full min-[1280px]:justify-end min-[1280px]:flex-row">
               <li
                 v-for="link in links"
                 :key="link.path"
-                class="border-b px-4 min-[1024px]:border-none"
+                class="border-b px-4 min-[1280px]:border-none"
               >
                 <div class="flex justify-between">
                   <router-link
                     :to="link.path"
-                    class="py-4 font-medium whitespace-nowrap min-[1024px]:mr-2"
+                    class="py-4 font-medium whitespace-nowrap min-[1280px]:mr-2"
                     >{{ link.name }}</router-link
                   >
                   <button
                     v-if="link.inner[0].name.length"
-                    class="w-[20%] border-l min-[1024px]:border-none"
+                    class="w-10 flex items-center justify-center border-l min-[1280px]:border-none"
                   >
                     <img src="@/assets/images/down.svg" alt="" />
                   </button>
