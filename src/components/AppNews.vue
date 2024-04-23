@@ -16,7 +16,7 @@ onMounted(async () => {
 <template>
   <section class="bg-[#f7f7f7] py-[100px]">
     <div class="container mx-auto px-5">
-      <h2 class="mb-4 text-center text-[1.4em] leading-[1.2em] font-semibold">Yangiliklar</h2>
+      <h2 class="mb-6 text-center text-[40px] leading-[40px] font-semibold">Yangiliklar</h2>
 
       <ul class="hidden flex-wrap gap-8">
         <li v-for="news in allNews" :key="news.id" class="border p-5">

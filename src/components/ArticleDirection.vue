@@ -103,13 +103,17 @@ const swiperContents = [
         class="mySwiper"
       >
         <swiper-slide v-for="swiperContent in swiperContents" :key="swiperContent.id">
-          <div class="flex items-center justify-center">
-            <div class="rounded-[30px] bg-[#FAFCFF] px-11 py-12">
-              <div class="flex justify-center mb-5">
-                <img :src="getImageUrl(swiperContent.imgUrl)" alt="testimonial_img" />
+          <div class="flex items-start justify-center">
+            <div class="rounded-[30px] bg-[#FAFCFF] flex flex-col">
+              <div class="flex w-full justify-center mb-5">
+                <img
+                  class="max-h-[220px] object-cover"
+                  :src="getImageUrl(swiperContent.imgUrl)"
+                  alt="testimonial_img"
+                />
               </div>
               <p
-                class="mb-6 line-clamp-4 h-[112px] text-black overflow-hidden text-center text-[1.4em] font-semibold leading-[1.2em] max-[600px]:text-[15px]"
+                class="mb-6 line-clamp-4 mt-auto h-[112px] text-black overflow-hidden text-center text-[1.4em] font-semibold leading-[1.2em] max-[600px]:text-[15px]"
               >
                 {{ swiperContent.text }}
               </p>
