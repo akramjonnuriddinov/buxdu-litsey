@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { getNews } from '@/api/news'
 import { formatTime } from '@/composables/formatTime'
 import BaseButton from '@/components/BaseButton.vue'
 import AppLoader from '@/components/AppLoader.vue'
 import LoaderWrapper from '@/components/LoaderWrapper.vue'
+import AppPagination from '@/components/AppPagination.vue'
+import { useRoute } from 'vue-router'
 
 const allNews = ref()
 const isLoading = ref(true)
+const route = useRoute()
+
+const notHome = computed(() => {
+  return route.name !== 'home'
+})
 
 onMounted(async () => {
   isLoading.value = true
@@ -103,6 +110,9 @@ setTimeout(() => {
           </div>
         </li>
       </ul>
+      <div class="flex justify-center mt-10" v-if="notHome">
+        <app-pagination />
+      </div>
     </div>
   </section>
 </template>
