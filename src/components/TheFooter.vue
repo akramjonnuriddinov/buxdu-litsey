@@ -24,7 +24,7 @@ const links = [
   },
   {
     name: 'Bizning faxrimiz',
-    path: 'teachers'
+    path: '/'
   },
   {
     name: 'Bog`lanish',

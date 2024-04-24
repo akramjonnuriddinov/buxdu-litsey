@@ -55,7 +55,7 @@ const links = [
   },
   {
     name: 'Bizning faxrimiz',
-    path: 'teachers',
+    path: '/',
     inner: [
       {
         path: '',
@@ -94,7 +94,7 @@ const toggle = () => {
 
 <template>
   <div class="bg-blue-500 w-full h-2 max-[1024px]:hidden1"></div>
-  <header class="py-5 relative">
+  <header class="py-5 relative z-[1000]">
     <div class="container w-full mx-auto px-5">
       <div class="min-[1280px]:flex min-[1280px]:justify-between min-[1280px]:items-center">
         <div class="flex justify-between items-center">
@@ -108,7 +108,7 @@ const toggle = () => {
         </div>
         <nav
           @click="toggle"
-          :class="{ 'opacity-0': !isShow, 'opacity-100': isShow }"
+          :class="{ hidden: !isShow, flex: isShow }"
           class="bg-[#00000080] transition-all duration-200 w-full fixed left-0 top-0 h-full min-[1280px]:opacity-100 min-[1280px]:bg-white min-[1280px]:relative"
         >
           <div
