@@ -7,7 +7,6 @@ import AppNews from '@/components/AppNews.vue'
 <template>
   <app-hero :bg-url="`url(${getImageUrl('news/hero.jpg')})`">
     <template v-slot:title> Yangiliklar </template>
-    <template v-slot:text> </template>
   </app-hero>
   <app-news>
     <template v-slot:news-top>
