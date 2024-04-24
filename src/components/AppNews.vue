@@ -37,7 +37,6 @@ setTimeout(() => {
             news.title
           }}</router-link>
           <div>
-            <!-- <img src="@/assets/images/news/" alt="" /> -->
             <span>Published on: {{ formatTime(news.createdDate) }}</span>
           </div>
           <div>
