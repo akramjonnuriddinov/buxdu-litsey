@@ -12,6 +12,12 @@ import { getImageUrl } from '@/composables/getImageUrl'
     <template v-slot:text> Qorako`l akademik litseyi </template>
   </app-hero>
   <about-lyceum />
-  <app-news />
+  <app-news>
+    <template v-slot:news-top>
+      <h2 class="pt-[100px] mb-6 text-center text-[40px] leading-[40px] font-semibold">
+        Yangiliklar
+      </h2>
+    </template>
+  </app-news>
   <article-direction />
 </template>
