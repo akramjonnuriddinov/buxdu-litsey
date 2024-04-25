@@ -30,7 +30,7 @@ const router = createRouter({
       component: () => import('@/views/ManagementView.vue')
     },
     {
-      path: '/:notFound',
+      path: '/:pathMatch(.*)*',
       component: import('@/views/NotFound.vue')
     },
   ]
