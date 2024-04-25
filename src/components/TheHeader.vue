@@ -108,7 +108,10 @@ const toggle = () => {
         </div>
         <nav
           @click="toggle"
-          :class="{ hidden: !isShow, flex: isShow }"
+          :class="{
+            'max-[1280px]:-translate-x-full': !isShow,
+            'max-[1280px]:translate-x-0': isShow
+          }"
           class="bg-[#00000080] transition-all duration-200 w-full fixed left-0 top-0 h-full min-[1280px]:opacity-100 min-[1280px]:bg-white min-[1280px]:relative"
         >
           <div

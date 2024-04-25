@@ -1,4 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const managers = ref([
+  {
+    fullname: 'Ergashev Qalandar 1',
+    writtenBy: 'Super User',
+    hits: 'hits: 0'
+  },
+  {
+    fullname: 'Ergashev Qalandar 2',
+    writtenBy: 'Super User',
+    hits: 'hits: 0'
+  },
+  {
+    fullname: 'Ergashev Qalandar 3',
+    writtenBy: 'Super User',
+    hits: 'hits: 0'
+  },
+  {
+    fullname: 'Ergashev Qalandar 4',
+    writtenBy: 'Super User',
+    hits: 'hits: 0'
+  },
+  {
+    fullname: 'Ergashev Qalandar 5',
+    writtenBy: 'Super User',
+    hits: 'hits: 0'
+  }
+])
+</script>
 
 <template>
   <section class="py-[100px]">
@@ -192,8 +222,8 @@
           </thead>
           <tbody>
             <tr
-              v-for="i in 5"
-              :key="i"
+              v-for="manager in managers"
+              :key="manager.fullname"
               class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <th
@@ -204,15 +234,15 @@
                   :to="{
                     name: 'manager',
                     params: {
-                      id: i
+                      id: manager.fullname
                     }
                   }"
                 >
-                  Ergashev Qalandar
+                  {{ manager.fullname }}
                 </router-link>
               </th>
-              <td class="px-6 py-4">Written by Super User</td>
-              <td class="px-6 py-4">Hits: 0</td>
+              <td class="px-6 py-4">Written by {{ manager.writtenBy }}</td>
+              <td class="px-6 py-4">{{ manager.hits }}</td>
             </tr>
           </tbody>
         </table>
