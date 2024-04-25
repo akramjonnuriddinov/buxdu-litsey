@@ -60,17 +60,8 @@ setTimeout(() => {
             class="blog-inner mb-7 flex rounded-[10px] border transition-all duration-300 max-[650px]:flex-col"
           >
             <img
-              v-if="news.thumbNailImageUrl"
-              src="/src/assets/images/home/img2.jpg"
-              class="h-[230px] w-[240px] rounded-bl-[10px] rounded-tl-[10px] object-cover max-[650px]:h-full max-[650px]:w-full max-[650px]:rounded-bl-none max-[650px]:rounded-tr-[10px]"
-              width="771"
-              height="430"
-              alt="img"
-            />
-            <img
-              v-else
-              :src="'http://185.196.213.14:4041/api/v1/news/' + news.thumbNailImageUrl"
-              class="h-[230px] w-[240px] rounded-bl-[10px] rounded-tl-[10px] object-cover max-[650px]:h-full max-[650px]:w-full max-[650px]:rounded-bl-none max-[650px]:rounded-tr-[10px]"
+              :src="'http://185.196.213.14:4041/' + news.thumbNailImageUrl"
+              class="min-h-[230px] min-w-[240px] max-h-[230px] max-w-[240px] rounded-bl-[10px] rounded-tl-[10px] object-contain max-[650px]:min-h-full max-[650px]:max-w-full max-[650px]:rounded-bl-none max-[650px]:rounded-tr-[10px]"
               width="771"
               height="430"
               alt="news"
