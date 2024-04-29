@@ -15,7 +15,7 @@ const links = [
   },
   {
     name: 'Yangiliklar',
-    path: 'news',
+    path: '/news',
     inner: [
       {
         path: '',
@@ -25,7 +25,7 @@ const links = [
   },
   {
     name: 'Yoshlar ittifoqi',
-    path: 'youth-union',
+    path: '/youth-union',
     inner: [
       {
         path: '',
@@ -35,7 +35,7 @@ const links = [
   },
   {
     name: 'Tuzilma',
-    path: 'structure',
+    path: '/structure',
     inner: [
       {
         path: 'open-data',
@@ -45,7 +45,7 @@ const links = [
   },
   {
     name: 'Litsey haqida',
-    path: 'about',
+    path: '/about',
     inner: [
       {
         path: '',
@@ -65,7 +65,7 @@ const links = [
   },
   {
     name: 'Bog`lanish',
-    path: 'contact',
+    path: '/contact',
     inner: [
       {
         path: '',
@@ -75,7 +75,7 @@ const links = [
   },
   {
     name: 'Rahbariyat',
-    path: 'management',
+    path: '/management',
     inner: [
       {
         path: 'inner-management',
@@ -95,9 +95,9 @@ const toggle = () => {
 <template>
   <div class="bg-blue-500 w-full h-2 max-[1024px]:hidden1"></div>
   <header class="py-5 relative z-[1000]">
-    <div class="container w-full mx-auto px-5">
+    <div class="container w-full px-5 mx-auto">
       <div class="min-[1280px]:flex min-[1280px]:justify-between min-[1280px]:items-center">
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
           <button @click="toggle" class="flex flex-col min-[1280px]:hidden">
             <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>
             <span class="h-[1px] w-7 block mb-2 bg-[#212529]"></span>

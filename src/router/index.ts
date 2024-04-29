@@ -27,12 +27,14 @@ const router = createRouter({
     {
       path: '/management',
       name: 'management',
-      component: () => import('@/views/ManagementView.vue')
+      component: () => import('@/views/ManagementView.vue'),
+      children: [
+      ]
     },
     {
       path: '/management/:id',
       name: 'manager',
-      component: () => import('@/views/ManagementView.vue')
+      component: () => import('@/views/ManagementInnerView.vue')
     },
     {
       path: '/:pathMatch(.*)*',

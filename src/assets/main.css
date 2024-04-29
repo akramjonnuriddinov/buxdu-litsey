@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .manager-title {
+    @apply inline-block  font-semibold leading-[1.75em];
+  }
+  .manager-main-title {
+    @apply my-10 text-[1.9em] text-black leading-[40px] font-semibold;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: 'Open Sans';
