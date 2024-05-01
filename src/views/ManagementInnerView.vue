@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { getImageUrl } from '@/composables/getImageUrl'
 
 const route = useRoute()
 
 const managers = ref([
   {
-    imgUrl: '',
+    imgUrl: 'managers/ergashov.png',
     fullname: 'Ergashev Qalandar Sharopovich',
     fromDate: '2018 йил 03 сентябрдан:',
     role: 'Бухоро давлат университети Қоракўл академик лицейи хўжалик ишлари бўйича',
@@ -31,7 +32,7 @@ const managers = ref([
     ]
   },
   {
-    imgUrl: '',
+    imgUrl: 'managers/bozorov.png',
     fullname: "Bozorov Ne'mat Ergashovich",
     fromDate: '2018 йил 03 сентябрдан:',
     role: 'Бухоро давлат университети Қоракўл академик лицейи директорининг ўқув ишлари бўйича директор ўринбосари',
@@ -57,7 +58,7 @@ const managers = ref([
     ]
   },
   {
-    imgUrl: '',
+    imgUrl: 'managers/feruz.png',
     fullname: 'Мамиров Феруз Тўрахонович',
     fromDate: '2013 йил 2 сентябрдан:',
     role: 'Бухоро давлат университети Қоракўл академик лицей маънавий-марифий ишлар бўйича директор ўринбосари',
@@ -84,7 +85,7 @@ const managers = ref([
     ]
   },
   {
-    imgUrl: '',
+    imgUrl: 'managers/.png',
     fullname: "Jumaqulov G'olib Hasanovich",
     fromDate: '',
     role: 'Direktor',
@@ -129,7 +130,7 @@ const user = managers.value.filter((item: any) => item.fullname == route.params.
           <p class="manager-main-title">
             {{ user.role }}
           </p>
-          <img src="" />
+          <img :src="getImageUrl(user.imgUrl)" />
         </div>
         <div class="flex flex-wrap gap-4 md:gap-x-0">
           <div class="flex items-center gap-2 md:w-1/2">
