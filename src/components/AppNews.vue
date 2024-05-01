@@ -35,11 +35,11 @@ setTimeout(() => {
     <app-loader />
   </loader-wrapper>
   <section class="bg-[#f7f7f7] pb-[100px]">
-    <div class="container mx-auto px-5">
+    <div class="container px-5 mx-auto">
       <slot name="news-top" />
 
-      <ul class="hidden flex-wrap gap-8">
-        <li v-for="news in allNews" :key="news.id" class="border p-5">
+      <ul class="flex-wrap hidden gap-8">
+        <li v-for="news in allNews" :key="news.id" class="p-5 border">
           <router-link to="/" class="text-[2em] font-semibold mb-4 block text-[#6c757d]">{{
             news.title
           }}</router-link>
@@ -60,11 +60,11 @@ setTimeout(() => {
             class="blog-inner mb-7 flex rounded-[10px] border transition-all duration-300 max-[650px]:flex-col"
           >
             <img
-              :src="'http://185.196.213.14:4041/' + news.thumbNailImageUrl"
+              :src="'http://185.196.213.14:4041/api/v1/' + news.thumbNailImageUrl"
               class="min-h-[230px] min-w-[240px] max-h-[230px] max-w-[240px] rounded-bl-[10px] rounded-tl-[10px] object-contain max-[650px]:min-h-full max-[650px]:max-w-full max-[650px]:rounded-bl-none max-[650px]:rounded-tr-[10px]"
               width="771"
               height="430"
-              alt="news"
+              :alt="news.title"
             />
             <div
               class="blog-content flex w-full flex-col items-start rounded-br-[10px] rounded-tr-[10px] bg-white px-[30px] py-[25px] transition-all duration-300 max-[650px]:rounded-bl-[10px] max-[650px]:rounded-tl-none max-[650px]:rounded-tr-none"
@@ -86,7 +86,7 @@ setTimeout(() => {
               <div
                 class="mt-auto flex w-full items-center justify-between font-medium text-tg-paragraph-color max-[1200px]:justify-start"
               >
-                <div class="mr-8 flex items-center">
+                <div class="flex items-center mr-8">
                   <img class="mr-2" src="@/assets/images/calendar.svg" alt="" />
                   <span class="whitespace-nowrap">
                     {{ formatTime(news.createdDate) }}
