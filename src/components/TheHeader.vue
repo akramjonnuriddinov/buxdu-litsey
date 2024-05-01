@@ -93,7 +93,7 @@ const toggle = () => {
 </script>
 
 <template>
-  <div class="bg-blue-500 w-full h-2 max-[1024px]:hidden1"></div>
+  <div class="bg-blue w-full h-2 max-[1024px]:hidden1"></div>
   <header class="py-5 relative z-[1000]">
     <div class="container w-full px-5 mx-auto">
       <div class="min-[1280px]:flex min-[1280px]:justify-between min-[1280px]:items-center">
@@ -133,7 +133,7 @@ const toggle = () => {
                 <div class="flex justify-between">
                   <router-link
                     :to="link.path"
-                    class="py-4 font-medium whitespace-nowrap min-[1280px]:mr-2"
+                    class="py-4 font-medium whitespace-nowrap min-[1280px]:mr-2 transition-all hover:text-blue"
                     >{{ link.name }}</router-link
                   >
                   <button
