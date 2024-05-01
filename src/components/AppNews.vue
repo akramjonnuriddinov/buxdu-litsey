@@ -27,7 +27,7 @@ setTimeout(() => {
   if (isLoading.value) {
     isLoading.value = false
   }
-}, 4000)
+}, 2000)
 </script>
 
 <template>

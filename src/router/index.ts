@@ -37,6 +37,11 @@ const router = createRouter({
       component: () => import('@/views/ManagementInnerView.vue')
     },
     {
+      path: '/structure',
+      name: 'structure',
+      component: () => import('@/views/StructureView.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       component: () => import('@/views/NotFound.vue')
     },
