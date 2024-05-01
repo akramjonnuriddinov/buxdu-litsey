@@ -85,7 +85,7 @@ const managers = ref([
     ]
   },
   {
-    imgUrl: 'managers/.png',
+    imgUrl: 'managers/direktor.png',
     fullname: "Jumaqulov G'olib Hasanovich",
     fromDate: '',
     role: 'Direktor',
@@ -126,11 +126,11 @@ const user = managers.value.filter((item: any) => item.fullname == route.params.
       <div>
         <h2 class="w-full mb-6 text-center manager-title">{{ user.fullname }}</h2>
         <p>2018 йил 03 сентябрдан:</p>
-        <div class="flex items-center">
+        <div class="flex items-center justify-between">
           <p class="manager-main-title">
             {{ user.role }}
           </p>
-          <img :src="getImageUrl(user.imgUrl)" />
+          <img width="200" :src="getImageUrl(user.imgUrl)" />
         </div>
         <div class="flex flex-wrap gap-4 md:gap-x-0">
           <div class="flex items-center gap-2 md:w-1/2">
