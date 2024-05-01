@@ -3,27 +3,22 @@ import { ref } from 'vue'
 
 const managers = ref([
   {
-    fullname: 'Ergashev Qalandar 1',
+    fullname: 'Ergashev Qalandar Sharopovich',
     writtenBy: 'Super User',
     hits: 'hits: 0'
   },
   {
-    fullname: 'Ergashev Qalandar 2',
+    fullname: "Bozorov Ne'mat Ergashovich",
     writtenBy: 'Super User',
     hits: 'hits: 0'
   },
   {
-    fullname: 'Ergashev Qalandar 3',
+    fullname: 'Мамиров Феруз Тўрахонович',
     writtenBy: 'Super User',
     hits: 'hits: 0'
   },
   {
-    fullname: 'Ergashev Qalandar 4',
-    writtenBy: 'Super User',
-    hits: 'hits: 0'
-  },
-  {
-    fullname: 'Ergashev Qalandar 5',
+    fullname: "Jumaqulov G'olib Hasanovich",
     writtenBy: 'Super User',
     hits: 'hits: 0'
   }
@@ -32,10 +27,10 @@ const managers = ref([
 
 <template>
   <section class="py-[100px]">
-    <div class="container mx-auto px-5">
+    <div class="container px-5 mx-auto">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div
-          class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4"
+          class="flex flex-wrap items-center justify-between pb-4 space-y-4 flex-column sm:flex-row sm:space-y-0"
         >
           <div>
             <button
@@ -98,7 +93,7 @@ const managers = ref([
                     />
                     <label
                       for="filter-radio-example-1"
-                      class="w-full ms-2 text-sm font-medium text-gray-900 rounded"
+                      class="w-full text-sm font-medium text-gray-900 rounded ms-2"
                       >Last day</label
                     >
                   </div>
@@ -114,7 +109,7 @@ const managers = ref([
                     />
                     <label
                       for="filter-radio-example-2"
-                      class="w-full ms-2 text-sm font-medium text-gray-900 rounded"
+                      class="w-full text-sm font-medium text-gray-900 rounded ms-2"
                       >Last 7 days</label
                     >
                   </div>
@@ -130,7 +125,7 @@ const managers = ref([
                     />
                     <label
                       for="filter-radio-example-3"
-                      class="w-full ms-2 text-sm font-medium text-gray-900 rounded"
+                      class="w-full text-sm font-medium text-gray-900 rounded ms-2"
                       >Last 30 days</label
                     >
                   </div>
@@ -146,7 +141,7 @@ const managers = ref([
                     />
                     <label
                       for="filter-radio-example-4"
-                      class="w-full ms-2 text-sm font-medium text-gray-900 rounded"
+                      class="w-full text-sm font-medium text-gray-900 rounded ms-2"
                       >Last month</label
                     >
                   </div>
@@ -162,7 +157,7 @@ const managers = ref([
                     />
                     <label
                       for="filter-radio-example-5"
-                      class="w-full ms-2 text-sm font-medium text-gray-900 rounded"
+                      class="w-full text-sm font-medium text-gray-900 rounded ms-2"
                       >Last year</label
                     >
                   </div>
@@ -173,7 +168,7 @@ const managers = ref([
           <label for="table-search" class="sr-only">Search</label>
           <div class="relative">
             <div
-              class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none"
+              class="absolute inset-y-0 left-0 flex items-center pointer-events-none rtl:inset-r-0 rtl:right-0 ps-3"
             >
               <svg
                 class="w-5 h-5 text-gray-500"
@@ -192,12 +187,12 @@ const managers = ref([
             <input
               type="text"
               id="table-search"
-              class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+              class="block p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search for items"
             />
           </div>
         </div>
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <table class="w-full text-sm text-left text-gray-500 rtl:text-right">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-3">Teacher</th>
