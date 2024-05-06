@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { getStructure } from '@/api/structure'
 import { onMounted, ref } from 'vue'
+import LoaderWrapper from '@/components/LoaderWrapper.vue'
+import AppLoader from '@/components/AppLoader.vue'
 
 const response = ref()
+const isLoading = ref(true)
 
 onMounted(async () => {
   response.value = (await getStructure('/structures')).data
+  isLoading.value = false
 })
 </script>
 
 <template>
-  <section class="py-[100px]">
+  <loader-wrapper v-if="isLoading">
+    <app-loader />
+  </loader-wrapper>
+  <section v-else class="py-[100px]">
     <div class="container px-5 mx-auto">
       <h2 class="mb-10 text-[1.9em] text-black leading-[40px] font-semibold">
         Buxoro davlat universiteti Qorako`l akademik litseyi Byudjet to'g'risidagi qonunchilik

@@ -30,7 +30,7 @@ const managers = ref([
     <div class="container px-5 mx-auto">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div
-          class="flex flex-wrap items-center justify-between pb-4 space-y-4 flex-column sm:flex-row sm:space-y-0"
+          class="flex-wrap items-center justify-between hidden pb-4 space-y-4 flex1 flex-column sm:flex-row sm:space-y-0"
         >
           <div>
             <button
@@ -206,7 +206,10 @@ const managers = ref([
               :key="manager.fullname"
               class="bg-white border-b hover:bg-gray-50"
             >
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 transition-all whitespace-nowrap hover:text-blue"
+              >
                 <router-link
                   :to="{
                     name: 'manager',
