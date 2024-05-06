@@ -6,7 +6,6 @@ const response = ref()
 
 onMounted(async () => {
   response.value = (await getStructure('/structures')).data
-  console.log(response.value)
 })
 </script>
 
@@ -19,9 +18,9 @@ onMounted(async () => {
         kelib chiqqan holda jismoniy va yuridik shaxslarga foydalanishlari uchun taqdim etiladi.
       </h2>
       <ul class="flex flex-col gap-5">
-        <li v-for="res in 2" :key="res" class="flex items-center justify-between">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, tempore.</p>
-          <a :href="'#'" target="_blank">
+        <li v-for="res in response" :key="res" class="flex items-center justify-between">
+          <p>{{ res.name }}</p>
+          <a :href="res.fileUrl" target="_blank">
             <img src="@/assets/images/excel.png" width="60" alt="icon"
           /></a>
         </li>
