@@ -2,7 +2,6 @@
 import { computed, onMounted, ref } from 'vue'
 import { getNews } from '@/api/news'
 import { formatTime } from '@/composables/formatTime'
-import BaseButton from '@/components/BaseButton.vue'
 import AppLoader from '@/components/AppLoader.vue'
 import LoaderWrapper from '@/components/LoaderWrapper.vue'
 import AppPagination from '@/components/AppPagination.vue'
@@ -27,7 +26,7 @@ setTimeout(() => {
   if (isLoading.value) {
     isLoading.value = false
   }
-}, 2000)
+}, 1000)
 </script>
 
 <template>
@@ -37,22 +36,6 @@ setTimeout(() => {
   <section class="bg-[#f7f7f7] pb-[100px]">
     <div class="container px-5 mx-auto">
       <slot name="news-top" />
-
-      <ul class="flex-wrap hidden gap-8">
-        <li v-for="news in allNews" :key="news.id" class="p-5 border">
-          <router-link to="/" class="text-[2em] font-semibold mb-4 block text-[#6c757d]">{{
-            news.title
-          }}</router-link>
-          <div>
-            <span>Published on: {{ formatTime(news.createdDate) }}</span>
-          </div>
-          <div>
-            <img :src="news.thumbNailImageUrl" alt="" />
-            <span>Read Time: {{ news.readTime }}</span>
-          </div>
-          <base-button>Read More</base-button>
-        </li>
-      </ul>
 
       <ul class="flex w-full flex-wrap justify-between max-[1200px]:flex-col">
         <li v-for="news in allNews" :key="news.id" class="w-1/2 px-4 max-[1200px]:w-auto">
@@ -75,7 +58,7 @@ setTimeout(() => {
               >
               <router-link
                 :to="{
-                  name: 'home',
+                  name: 'newsInner',
                   params: {
                     id: news.id
                   }
