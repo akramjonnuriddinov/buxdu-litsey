@@ -47,6 +47,11 @@ const router = createRouter({
       component: () => import('@/views/StructureView.vue')
     },
     {
+      path: '/youth-union',
+      name: 'youthUnion',
+      component: () => import('@/views/YouthUnion.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       component: () => import('@/views/NotFound.vue')
     },
